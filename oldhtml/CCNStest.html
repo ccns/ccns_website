@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">    
+		<title> CCNS </title>
+        <div class="head">
+		
+		    <link rel="stylesheet" href="css/CCNS.css">
+		    <link rel="stylesheet" href="css/menu.css">
+		    <link rel="stylesheet" href="css/slider2.css">
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+		
+		</div>
+	</head>
+	<body>
+	
+        <div class="marquee">
+            <marquee>Welcome to CCNS!</marquee>
+        </div>
+        
+	<div class="sliderContainer">
+	    <div class="slider">
+            <input type="radio" id="control1" name="controls" checked="checked"/>
+            <input type="radio" id="control2" name="controls"/>
+            <input type="radio" id="control3" name="controls"/>
+            <input type="radio" id="control4" name="controls"/>
+            <input type="radio" id="control5" name="controls"/>
+            <label for="control1"></label>
+            <label for="control2"></label>
+            <label for="control3"></label>
+            <label for="control4"></label>
+            <label for="control5"></label>
+            <div class="sliderinner">
+                <ul>
+                    <li>
+                        <img src="photos/ccns1.jpg" />
+                  
+                    </li>
+                    <li>
+                        <img src="photos/ccns2.jpg" />
+                   
+                    </li>
+                    <li>
+                        <img src="photos/ccns3.jpg" />
+                    
+                    </li>
+                    <li>
+                        <img src="photos/ccns4.jpg" />
+                   
+                    </li>
+                    <li>
+                        <img src="photos/ccns5.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div><!--slider-->
+	</div>
+	    
+        
+		<div class="nav">
+            <nav>
+    			<ul>
+    			    <li class="home-icon"><a href= "#" title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li><a href= "#"> 關於我們 </a><span class="dropBottom"></span>
+    			        <ul>
+    			            <li id="clubHistory"><a href= "#"> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a href= "#"> 社團介紹 </a></li>
+    			        </ul>
+    			    </li>
+    					
+    				
+    			    <li id="clubClassContent"><a href="#"> 社課內容 </a></li>
+    			    <li id="clubActivities"><a href= "#"> 社團活動 </a></li>
+    			    <li id="dreamLand"><a href= "#"> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a href= "#"> 討論區 </a></li>
+    			    <li id="CCNSZone"><a href= "#"> CCNS專區 </a></li>
+    			    
+    			    <!-- dropBottom sample --
+    			    <li><a href="#">Tutorials</a><span class="dropBottom"></span>
+                        <ul>
+                            <li><a href="#">Design</a><span class="dropRight"></span>
+                                <ul>
+                                    <li><a href="#">Photoshop</a></li>
+                                    <li><a href="#">Illustrator</a></li>
+                                    <li><a href="#">Web Design</a><span class="dropRight"></span>
+                                        <ul>
+                                           <li><a href="#">XTHML</a></li>
+                                           <li><a href="#">CSS</a></li>
+                                           <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Articles</a></li>
+                            <li><a href="#">Interviews</a></li>
+                        </ul>
+                    </li>
+                    -- dropBottom sample -->
+	    		</ul>
+		    </nav>
+        </div>
+		    
+			
+			<div class="main">
+			<ul>			
+		    <p> 內容</P>
+			</ul>
+			</div>
+			
+			<script>
+				$(document).ready(function ()
+				{
+						
+						$("#clubHistory").click(function()
+						{
+							$(".main").load("about.html #ClubHistory");
+						});
+						
+						$("#aboutUs").click(function()
+						{
+							$(".main").load("about.html #AboutUs");
+						});
+						
+						$("#clubClassContent").click(function()
+						{
+							$(".main").load("classes.html #DivClubClassContent");
+						});
+						
+						$("#clubActivities").click(function()
+						{
+							$(".main").load("activities.html #DivClubActivities");
+						});
+						
+						$("#dreamLand").click(function()
+						{
+							$(".main").load("dreamLand.html #DivDreamLand");
+						});
+						
+						$("#discussionArea").click(function()
+						{
+							$(".main").load("discussion.html #DivDiscussionArea");
+						});
+						
+					
+						$("#CCNSZone").click(function()
+						{
+							$(".main").load("ccnser.html #DivCCNSZone");
+						});
+						
+				});
+				
+			</script>
+	</body>
+	
+		    
+	<div class="footer">
+		<footer></footer>
+	</div>
+	
+	<style>
+		a {
+		text-decoration:none;
+		}
+	</style>
+</html>

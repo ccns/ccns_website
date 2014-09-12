@@ -1,0 +1,99 @@
+@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,400);
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+.head  a{
+	margin-right: auto;
+	
+}
+
+body {
+  /*background:url(http://coolblackppt.com/wp-content/uploads/2013/12/Black-denim-seamless-fabric-texture-tile-able-website-backgrounds.jpg);*/
+  background:#FFDD55;
+  font-family: Dosis,helvetica,Microsoft JhengHei,sans-serif;
+  width: 100%;
+  overflow:hidden;
+}
+
+.line {
+    width:400px;
+    height:1px;
+    margin:0px auto;
+    background-color:#FFDD55;
+    overflow:hidden;
+}
+
+.outter-nav {
+    background: black;
+}
+
+* { margin: 0; padding: 0; }
+.marquee {
+    background:black;
+}
+
+.wrapper {
+	position: relative;
+	max-width: 600px;
+	width: 100%;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+.marquee marquee{
+    color:#FFDD55;
+    display:block;
+    width: 50%;
+    margin:0px auto;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*.link a {
+	display: inline-block;
+	width:80px;	
+	height:20px;
+	color #5a5a5a;	
+	background-color: orange;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	margin: 10px;
+	
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border: 1px solid #669900;
+}
+.link li{
+	display: inline-block;
+}
+.link ul { 
+    width:800px; 
+    margin:00 auto; 
+}*/
+
+.main {
+	margin-left:  25%;
+	margin-right: 25%;
+	margin-top: 50px;
+    margin-bottom: 50px;
+	overflow: auto;
+}
+/*footer {
+ 
+ position: relative;
+ margin-top: -150px; 
+ height: 150px;
+ clear:both;
+}*/
+
+.main div{
+    border-radius: 5px;
+    }
+    
+.main p{
+  font-size: 20px; 
+  margin-top: 5px;
+}

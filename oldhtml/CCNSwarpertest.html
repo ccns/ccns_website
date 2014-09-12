@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">    
+		<title> CCNS </title>
+        <div class="head">
+		
+		    <link rel="stylesheet" href="css/CCNS.css">
+		    <link rel="stylesheet" href="css/menu.css">
+		    <!--link rel="stylesheet" href="css/slider2.css"-->
+		    <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+		    
+		    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+		    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		
+		</div>
+	</head>
+	<body>
+	
+        <div class="marquee">
+            <marquee>Welcome to CCNS!</marquee>
+        </div>
+        
+	    <div class="wrapper">
+
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href="photos/ccns1.jpg" target="_blank"><img src="photos/ccns1.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>硬體教學</h3>
+						</div>
+					</li>
+					<li>
+						<a href="photos/ccns2.jpg" target="_blank"><img src="photos/ccns2.jpg" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>硬體教學</h3>
+						</div>
+					</li>
+					<li>
+						<a href="photos/ccns3.jpg" target="_blank"><img src="photos/ccns3.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>硬體教學</h3>
+						</div>
+					</li>
+					<li>
+						<a href="photos/ccns4.jpg" target="_blank"><img src="photos/ccns4.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>硬體教學</h3>
+						</div>
+					</li>
+					<li>
+						<a href="photos/ccns5.jpg" target="_blank"><img src="photos/ccns5.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>硬體教學</h3>
+						</div>
+					</li>
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
+
+				<div id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+			</div><!-- /wrapper -->
+	    
+        
+		<div class="nav">
+            <nav>
+    			<ul>
+    			    <li class="home-icon"><a href= "#" title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li><a href= "#"> 關於我們 </a><span class="dropBottom"></span>
+    			        <ul>
+    			            <li id="clubHistory"><a href= "#"> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a href= "#"> 社團介紹 </a></li>
+    			        </ul>
+    			    </li>
+    					
+    				
+    			    <li id="clubClassContent"><a href="#"> 社課內容 </a></li>
+    			    <li id="clubActivities"><a href= "#"> 社團活動 </a></li>
+    			    <li id="dreamLand"><a href= "#"> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a href= "#"> 討論區 </a></li>
+    			    <li id="CCNSZone"><a href= "#"> CCNS專區 </a></li>
+    			    
+    			    <!-- dropBottom sample --
+    			    <li><a href="#">Tutorials</a><span class="dropBottom"></span>
+                        <ul>
+                            <li><a href="#">Design</a><span class="dropRight"></span>
+                                <ul>
+                                    <li><a href="#">Photoshop</a></li>
+                                    <li><a href="#">Illustrator</a></li>
+                                    <li><a href="#">Web Design</a><span class="dropRight"></span>
+                                        <ul>
+                                           <li><a href="#">XTHML</a></li>
+                                           <li><a href="#">CSS</a></li>
+                                           <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Articles</a></li>
+                            <li><a href="#">Interviews</a></li>
+                        </ul>
+                    </li>
+                    -- dropBottom sample -->
+	    		</ul>
+		    </nav>
+        </div>
+		    
+			
+			<div class="main">
+			<ul>			
+		    <p> 內容</P>
+			</ul>
+			</div>
+			
+			<script>
+				$(document).ready(function ()
+				{
+						
+						$("#clubHistory").click(function()
+						{
+							$(".main").load("about.html #ClubHistory");
+						});
+						
+						$("#aboutUs").click(function()
+						{
+							$(".main").load("about.html #AboutUs");
+						});
+						
+						$("#clubClassContent").click(function()
+						{
+							$(".main").load("classes.html #DivClubClassContent");
+						});
+						
+						$("#clubActivities").click(function()
+						{
+							$(".main").load("activities.html #DivClubActivities");
+						});
+						
+						$("#dreamLand").click(function()
+						{
+							$(".main").load("dreamLand.html #DivDreamLand");
+						});
+						
+						$("#discussionArea").click(function()
+						{
+							$(".main").load("discussion.html #DivDiscussionArea");
+						});
+						
+					
+						$("#CCNSZone").click(function()
+						{
+							$(".main").load("ccnser.html #DivCCNSZone");
+						});
+						
+				});
+				
+			</script>
+			
+			<script type="text/javascript">
+			$(function() {
+
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$navDots = $( '#nav-dots' ).hide(),
+						$nav = $navDots.children( 'span' ),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$navDots.show();
+								$shadow.show();
+
+							},
+							onBeforeChange : function( pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slicebox.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slicebox.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+	</body>
+	
+		    
+	<div class="footer">
+		<footer></footer>
+	</div>
+	
+	<style>
+		a {
+		text-decoration:none;
+		}
+	</style>
+</html>

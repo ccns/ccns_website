@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>photoShow</title>
+	<div id="album"> 
+		<p>change photo</p>
+		<script>
+			myPic=new Array("dsf.jpg","aSD.jpg","adsf.jpg");
+			var x=0;
+			
+			function showPic()
+			{
+				document.pic.src=myPic[x];
+				x++;
+				if(x>2)
+				{
+					x=0;
+				}
+			}
+			
+			
+			var myTimer=setInterval('showPic()',1500);
+			
+			
+			function stopPic()
+			{
+				clearInterval(myTimer);
+			}
+		
+		</script>
+		
+		
+	</div>
+</head>
+<body>
+		<form>
+			<input type="button" value="stop changing photo" onClick="stopPic()">
+			<img id="pic" src="dsf.jpg" style="left:2000px" />
+		</form>
+	
+</body>
+
+</html>
+		
+
+		
+		

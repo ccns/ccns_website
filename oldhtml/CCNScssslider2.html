@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">    
+		<title> CCNS </title>
+        <div class="head">
+		
+		    <link rel="stylesheet" href="css/CCNS.css">
+		    <link rel="stylesheet" href="css/menu.css">
+		    <link rel="stylesheet" href="css/component.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		    <script src="js/modernizr.custom.js"></script>
+		
+		</div>
+	</head>
+	<body>
+        
+	<div id="cbp-fwslider" class="cbp-fwslider">
+		<ul>
+					<li><a href="#" style="margin-top:0px;"><img src="photos/CCNSlogo.png" alt="img00"/></a></li>
+					<li><a href="#"><img src="photos/ccns1.jpg" alt="img01"/></a></li>
+					<li><a href="#"><img src="photos/ccns2.jpg" alt="img02"/></a></li>
+					<li><a href="#"><img src="photos/ccns3.jpg" alt="img03"/></a></li>
+					<li><a href="#"><img src="photos/ccns4.jpg" alt="img04"/></a></li>
+					<li><a href="#"><img src="photos/ccns5.jpg" alt="img05"/></a></li>
+		</ul>
+	</div>
+	
+        <div class="marquee">
+            <marquee>Welcome to CCNS!</marquee>
+        </div>
+	    
+        
+		<div class="nav">
+            <nav>
+    			<ul>
+    			    <li class="home-icon"><a href= "#" title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li><a href= "#"> 關於我們 </a><span class="dropBottom"></span>
+    			        <ul>
+    			            <li id="clubHistory"><a href= "#"> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a href= "#"> 社團介紹 </a></li>
+    			        </ul>
+    			    </li>
+    					
+    				
+    			    <li id="clubClassContent"><a href="#"> 社課內容 </a></li>
+    			    <li id="clubActivities"><a href= "#"> 社團活動 </a></li>
+    			    <li id="dreamLand"><a href= "#"> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a href= "#"> 討論區 </a></li>
+    			    <li id="CCNSZone"><a href= "#"> CCNS專區 </a></li>
+    			    
+    			    <!-- dropBottom sample --
+    			    <li><a href="#">Tutorials</a><span class="dropBottom"></span>
+                        <ul>
+                            <li><a href="#">Design</a><span class="dropRight"></span>
+                                <ul>
+                                    <li><a href="#">Photoshop</a></li>
+                                    <li><a href="#">Illustrator</a></li>
+                                    <li><a href="#">Web Design</a><span class="dropRight"></span>
+                                        <ul>
+                                           <li><a href="#">XTHML</a></li>
+                                           <li><a href="#">CSS</a></li>
+                                           <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Articles</a></li>
+                            <li><a href="#">Interviews</a></li>
+                        </ul>
+                    </li>
+                    -- dropBottom sample -->
+	    		</ul>
+		    </nav>
+        </div>
+		    
+			
+			<div class="main">
+			<ul>			
+		    <p> 內容</P>
+			</ul>
+			</div>
+			
+			<script>
+				$(document).ready(function ()
+				{
+						
+						$("#clubHistory").click(function()
+						{
+							$(".main").load("about.html #ClubHistory");
+						});
+						
+						$("#aboutUs").click(function()
+						{
+							$(".main").load("about.html #AboutUs");
+						});
+						
+						$("#clubClassContent").click(function()
+						{
+							$(".main").load("classes.html #DivClubClassContent");
+						});
+						
+						$("#clubActivities").click(function()
+						{
+							$(".main").load("activities.html #DivClubActivities");
+						});
+						
+						$("#dreamLand").click(function()
+						{
+							$(".main").load("dreamLand.html #DivDreamLand");
+						});
+						
+						$("#discussionArea").click(function()
+						{
+							$(".main").load("discussion.html #DivDiscussionArea");
+						});
+						
+					
+						$("#CCNSZone").click(function()
+						{
+							$(".main").load("ccnser.html #DivCCNSZone");
+						});
+						
+				});
+				
+			</script>
+			
+		<script src="js/jquery.cbpFWSlider.min.js"></script>
+		<script>
+			$( function() {
+				/*
+				- how to call the plugin:
+				$( selector ).cbpFWSlider( [options] );
+				- options:
+				{
+					// default transition speed (ms)
+					speed : 500,
+					// default transition easing
+					easing : 'ease'
+				}
+				- destroy:
+				$( selector ).cbpFWSlider( 'destroy' );
+				*/
+
+				$( '#cbp-fwslider' ).cbpFWSlider();
+
+			} );
+		</script>
+	</body>
+	
+		    
+	<div class="footer">
+		<footer></footer>
+	</div>
+	
+	<style>
+		a {
+		text-decoration:none;
+		}
+	</style>
+</html>

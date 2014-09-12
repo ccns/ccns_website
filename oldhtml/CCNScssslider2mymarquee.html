@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">    
+		<title> CCNS </title>
+        <div class="head">
+		
+		    <link rel="stylesheet" href="css/CCNS.css">
+		    <link rel="stylesheet" href="css/menu.css">
+		    <link rel="stylesheet" href="css/component.css">
+		    <link rel="stylesheet" href="css/mymarquee.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		    <script src="js/modernizr.custom.js"></script>
+		
+		</div>
+	</head>
+	<body>
+    
+    <div class="outter-nav">
+	<div id="cbp-fwslider" class="cbp-fwslider">
+		<ul>
+					<li><a href="#" style="margin-top:0px;"><img src="photos/CCNSlogo.png" alt="img00"/></a></li>
+					<li><a href="#"><img src="photos/ccns1.jpg" alt="img01"/></a></li>
+					<li><a href="#"><img src="photos/ccns2.jpg" alt="img02"/></a></li>
+					<li><a href="#"><img src="photos/ccns3.jpg" alt="img03"/></a></li>
+					<li><a href="#"><img src="photos/ccns4.jpg" alt="img04"/></a></li>
+					<li><a href="#"><img src="photos/ccns5.jpg" alt="img05"/></a></li>
+		</ul>
+	</div>
+	    <div class="line" style="margin-top:5px;"></div>
+        <div id="chaoverscroll_box" class="chaoverscroll" >
+            <div class="chaoverscroll"><a href="#" >Welcome to CCNS</a></div>
+            <div class="chaoverscroll"><a href="#" >[社課]下學期社課可以來安排了哦</a></div>
+            <div class="chaoverscroll"><a href="#" >[活動]活動也可以開始確定了</a></div>
+            <div class="chaoverscroll"><a href="#" >[資訊]放一些計網或CCNS相關新資訊</a></div>
+            <div class="chaoverscroll"><a href="#" >[吐槽]屁話</a></div>
+        </div>
+        <div class="line" style="margin-bottom:5px;"></div>
+	    
+        
+		<div class="nav">
+            <nav>
+    			<ul>
+    			    <li class="home-icon"><a href= "#" title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li><a href= "#"> 關於我們 </a><span class="dropBottom"></span>
+    			        <ul>
+    			            <li id="clubHistory"><a href= "#"> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a href= "#"> 社團介紹 </a></li>
+    			        </ul>
+    			    </li>
+    					
+    				
+    			    <li id="clubClassContent"><a href="#"> 社課內容 </a></li>
+    			    <li id="clubActivities"><a href= "#"> 社團活動 </a></li>
+    			    <li id="dreamLand"><a href= "#"> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a href= "#"> 討論區 </a></li>
+    			    <li id="CCNSZone"><a href= "#"> CCNS專區 </a></li>
+    			    
+    			    <!-- dropBottom sample --
+    			    <li><a href="#">Tutorials</a><span class="dropBottom"></span>
+                        <ul>
+                            <li><a href="#">Design</a><span class="dropRight"></span>
+                                <ul>
+                                    <li><a href="#">Photoshop</a></li>
+                                    <li><a href="#">Illustrator</a></li>
+                                    <li><a href="#">Web Design</a><span class="dropRight"></span>
+                                        <ul>
+                                           <li><a href="#">XTHML</a></li>
+                                           <li><a href="#">CSS</a></li>
+                                           <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Articles</a></li>
+                            <li><a href="#">Interviews</a></li>
+                        </ul>
+                    </li>
+                    -- dropBottom sample -->
+	    		</ul>
+		    </nav>
+        </div>
+		</div>
+			
+			<div class="main">
+			<ul>			
+		    <p> 內容</P>
+			</ul>
+			</div>
+			
+			<script>
+				$(document).ready(function ()
+				{
+						
+						$("#clubHistory").click(function()
+						{
+							$(".main").load("about.html #ClubHistory");
+						});
+						
+						$("#aboutUs").click(function()
+						{
+							$(".main").load("about.html #AboutUs");
+						});
+						
+						$("#clubClassContent").click(function()
+						{
+							$(".main").load("classes.html #DivClubClassContent");
+						});
+						
+						$("#clubActivities").click(function()
+						{
+							$(".main").load("activities.html #DivClubActivities");
+						});
+						
+						$("#dreamLand").click(function()
+						{
+							$(".main").load("dreamLand.html #DivDreamLand");
+						});
+						
+						$("#discussionArea").click(function()
+						{
+							$(".main").load("discussion.html #DivDiscussionArea");
+						});
+						
+					
+						$("#CCNSZone").click(function()
+						{
+							$(".main").load("ccnser.html #DivCCNSZone");
+						});
+						
+				});
+				
+			</script>
+			
+		<script src="js/jquery.cbpFWSlider.min.js"></script>
+		<script>
+			$( function() {
+				/*
+				- how to call the plugin:
+				$( selector ).cbpFWSlider( [options] );
+				- options:
+				{
+					// default transition speed (ms)
+					speed : 500,
+					// default transition easing
+					easing : 'ease'
+				}
+				- destroy:
+				$( selector ).cbpFWSlider( 'destroy' );
+				*/
+
+				$( '#cbp-fwslider' ).cbpFWSlider();
+
+			} );
+		</script>
+	    <script type="text/javascript"> 
+        function slideLine(box,stf,delay,speed,h)
+        {
+            //取得id
+            var slideBox = document.getElementById(box);
+            //預設值 delay:幾毫秒滾動一次(1000毫秒=1秒)
+            // speed:數字越小越快，h:高度
+            var delay = delay||2000,speed = speed||20,h = h||20;
+            var tid = null,pause = false;
+            //setInterval跟setTimeout的用法可以咕狗研究一下~
+            var s = function(){tid=setInterval(slide, speed);}
+            //主要動作的地方
+            var slide = function(){
+            //當滑鼠移到上面的時候就會暫停
+            if(pause) return;
+            //滾動條往下滾動 數字越大會越快但是看起來越不連貫，所以這邊用1
+            slideBox.scrollTop += 1;
+            //滾動到一個高度(h)的時候就停止
+            if(slideBox.scrollTop%h == 0){
+            //跟setInterval搭配使用的
+            clearInterval(tid);
+            //將剛剛滾動上去的前一項加回到整列的最後一項
+            slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
+            //再重設滾動條到最上面
+            slideBox.scrollTop = 0;
+            //延遲多久再執行一次
+            setTimeout(s, delay);
+            }
+            }
+            //滑鼠移上去會暫停 移走會繼續動
+            slideBox.onmouseover=function(){pause=true;}
+            slideBox.onmouseout=function(){pause=false;}
+            //起始的地方，沒有這個就不會動囉
+            setTimeout(s, delay);
+            }
+                //網頁load完會執行一次
+            //五個屬性各別是：外面div的id名稱、包在裡面的標籤類型
+            //延遲毫秒數、速度、高度
+            slideLine('chaoverscroll_box','div',3000,25,20);
+        </script>
+	</body>
+	
+		    
+	<div class="footer">
+		<footer></footer>
+	</div>
+	
+	<style>
+		a {
+		text-decoration:none;
+		}
+	</style>
+</html>
