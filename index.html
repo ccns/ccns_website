@@ -7,6 +7,7 @@
 		
 		    <link rel="stylesheet" href="css/index.css">
 		    <link rel="stylesheet" href="css/menu.css">
+		    <link rel="stylesheet" href="css/topmenu.css">
 		    <link rel="stylesheet" href="css/component.css">
 		    <link rel="stylesheet" href="css/mymarquee.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -20,7 +21,7 @@
     
 	    <div id="cbp-fwslider" class="cbp-fwslider">
 		    <ul>
-					<li><a href="#" class="foldBtn" style="margin-top:80px;"><img src="photos/CCNSlogo.png" alt="img00"/></a></li>
+					<li><a href="#" class="enter" style="margin-top:80px;"><img src="photos/CCNSlogo.png" alt="img00"/></a></li>
 					<li><a href="#"><img src="photos/ccns1.jpg" alt="img01"/></a></li>
 					<li><a href="#"><img src="photos/ccns2.jpg" alt="img02"/></a></li>
 					<li><a href="#"><img src="photos/ccns3.jpg" alt="img03"/></a></li>
@@ -40,20 +41,20 @@
 		<div class="nav">
             <nav>
     			<ul>
-    			    <li id="indexIcon" class="home-icon"><a title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li id="indexIcon" class="home-icon"><a title="Home" href="#"><img src="photos/home2.png" /></a></li>
     			    <li><a> 關於我們 </a><span class="dropBottom"></span>
     			        <ul>
-    			        	<li id="clubHistory"><a> 社團沿革 </a></li>
-    			            <li id="aboutUs"><a> 社團介紹 </a></li>
+    			        	<li id="clubHistory"><a href="#"> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a href="#"> 社團介紹 </a></li>
     			        </ul>
     			    </li>
     					
     				
-    			    <li id="clubClassContent"><a> 社課內容 </a></li>
-    			    <li id="clubActivities"><a> 社團活動 </a></li>
-    			    <li id="dreamLand"><a> 夢之大地 </a></li>
-    			    <li id="discussionArea"><a> 討論區 </a></li>
-    			    <li id="CCNSZone"><a> CCNS專區 </a></li>
+    			    <li id="clubClassContent"><a href="#"> 社課內容 </a></li>
+    			    <li id="clubActivities"><a href="#"> 社團活動 </a></li>
+    			    <li id="dreamLand"><a href="#"> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a href="#"> 討論區 </a></li>
+    			    <li id="CCNSZone"><a href="#"> CCNS專區 </a></li>
     			    <li id="foldBtn" class="foldBtn">
     			        <a></a>
     			    </li>
@@ -82,7 +83,32 @@
 	    		</ul>
 		    </nav>
         </div>
-		</div>
+	</div>
+	
+	
+	
+	<!--div class="nav2">
+            <nav>
+    			<ul>
+    			    <li id="indexIcon" class="home-icon"><a title="Home"><img src="photos/home2.png" /></a></li>
+    			    <li><a> 關於我們 </a><span class="dropBottom"></span>
+    			        <ul>
+    			        	<li id="clubHistory"><a> 社團沿革 </a></li>
+    			            <li id="aboutUs"><a> 社團介紹 </a></li>
+    			        </ul>
+    			    </li>
+    					
+    				
+    			    <li id="clubClassContent"><a> 社課內容 </a></li>
+    			    <li id="clubActivities"><a> 社團活動 </a></li>
+    			    <li id="dreamLand"><a> 夢之大地 </a></li>
+    			    <li id="discussionArea"><a> 討論區 </a></li>
+    			    <li id="CCNSZone"><a> CCNS專區 </a></li>
+    			        <a></a>
+    			    </li>
+	    		</ul>
+		    </nav>
+    </div-->
 			
 			<div class="main">
 			<ul>			
@@ -90,18 +116,113 @@
 			</ul>
 			</div>
 			
+			<div id="textBoard" style="background-color: #F2F4F7; display: none; position: fixed; top: 50%;  left: 50%;">
+			</div>
+			<div id="divProgress" style="text-align:center; display: none; position: fixed; top: 50%;  left: 50%;">
+				<h1 color="white" size="10px">Loading...</h1>
+				<img src="./images/loading.gif" />
+			</div>
+			<div id="divMaskFrame" style="background-color: #F2F4F7; display: none; left: 0px;
+			    position: fixed; top: 0px;">
+			</div>
+			
+			<script>
+				function ifGalleryShow() {
+					if($(".cbp-fwslider").css("visibility") == "visible")
+						return true;
+					else if($(".cbp-fwslider").css("visibility") == "hidden")
+						return false;
+					return null;
+				}
+			</script>
+			
+			<script>// 顯示讀取遮罩
+			function ShowProgressBar() {
+				displayProgress();
+				displayMaskFrame();
+			}
+			
+			function firstShowProgressBar() {
+				firstDisplayProgress();
+				displayMaskFrame();
+			}
+			
+			// 隱藏讀取遮罩
+			function HideProgressBar() {
+					var progress = $('#divProgress');
+					var maskFrame = $("#divMaskFrame");
+					var board = $('#textBoard');
+					progress.fadeOut(1000);
+					maskFrame.fadeOut(1000);
+					board.fadeOut(1000);
+				}
+				// 顯示讀取畫面
+			
+			function displayProgress() {
+					var w = $(document).width();
+					var h = $(window).height();
+					var progress = $('#divProgress');
+					progress.css({
+						"z-index": 999999,
+						"top": (h / 2) - (progress.height() / 2),
+						"left": (w / 2) - (progress.width() / 2)
+					});
+					progress.fadeIn(1000);
+				}
+				// 顯示遮罩畫面
+			
+			function displayMaskFrame() {
+				var w = $(window).width();
+				var h = $(document).height();
+				var maskFrame = $("#divMaskFrame");
+				maskFrame.css({
+					"z-index": 999998,
+					"opacity": 0,
+					"width": w,
+					"height": h
+				});
+				maskFrame.fadeIn(1000);
+			}
+			
+			function firstDisplayProgress() {
+					var w = $(document).width();
+					var h = $(window).height();
+					var progress = $('#divProgress');
+					var board = $('#textBoard');
+					progress.css({
+						"z-index": 999999,
+						"top": (h / 2) - (progress.height() / 2),
+						"left": (w / 2) - (progress.width() / 2)
+					});
+					board.css({
+						"opacity": 0.7,
+						"z-index": 999999,
+						"top": (h / 2) - (progress.height()*1.2 / 2),
+						"left": (w / 2) - (progress.width()*1.2 / 2),
+						"height": progress.height() * 1.2,
+						"width": progress.width() * 1.2
+					});
+					progress.fadeIn(1000);
+					board.fadeIn(1000);
+				}
+			</script>
+			
 			<script>
 				$(document).ready(function ()
 				{
-				    
-				        $(".main").load("ccns.html #content")
+						firstShowProgressBar();
+				        $(".main").load("home.html #content",function() {
+							HideProgressBar();
+				        });
 						
 						$("#indexIcon").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
-									$(".main").load("ccns.html #content",
+									$(".main").load("home.html #content",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -110,10 +231,12 @@
 						
 						$("#clubHistory").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("about.html #ClubHistory",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -122,10 +245,12 @@
 						
 						$("#aboutUs").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("about.html #AboutUs",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -133,10 +258,12 @@
 						
 						$("#clubClassContent").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("classes.html #DivClubClassContent",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -145,10 +272,12 @@
 						
 						$("#clubActivities").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("activities.html #DivClubActivities",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -157,10 +286,12 @@
 						
 						$("#dreamLand").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("dreamLand.html #DivDreamLand",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -169,10 +300,12 @@
 						
 						$("#discussionArea").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("discussion.html #DivDiscussionArea",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -182,10 +315,12 @@
 					
 						$("#CCNSZone").click(function()
 						{
+							ShowProgressBar();
 							$(".main").fadeOut(1000,
 								function(){
 									$(".main").load("ccnser.html #DivCCNSZone",
 										function(){
+											HideProgressBar();
 											$(".main").fadeIn(1000);
 										});
 								});
@@ -194,25 +329,32 @@
 						
 						$(".foldBtn").click(function()
 						{
-							if($(".cbp-fwslider").css("visibility") == "visible")
+							if(ifGalleryShow())
 							{
+							    $(".cbp-fwslider").animate({"height": "0px"},1000,
+							    	function() {
+							    		$(".cbp-fwslider").css({"visibility": "hidden"});
+                            			$(".foldBtn a").text("∇展開gallery");
+							    	});
+							    
+							}
+                            else
+                            {
+                                $(".cbp-fwslider").css({"visibility": "visible"});
+							    $(".cbp-fwslider").animate({"height": $(window).height()-71},1000);
+                            	$(".foldBtn a").text("Δ收起gallery");
+                            }
+						});
+						
+						$(".enter").click(function()
+						{
 							    $(".cbp-fwslider").animate({"height": "0px"},1000,
 							    	function() {
 							    		$(".cbp-fwslider").css({"visibility": "hidden"});
 							    		$("body").css({"overflow": "auto"});
 							    		$("body").attr("onmousewheel","return true;");
-                            			$(".foldBtn a").text("∇展開相簿");
+                            			$(".foldBtn a").text("∇展開gallery");
 							    	});
-							    
-							}
-                            else if($(".cbp-fwslider").css("visibility") == "hidden")
-                            {
-                                $(".cbp-fwslider").css({"visibility": "visible"});
-							    $(".cbp-fwslider").animate({"height": $(window).height()-71},1000);
-							    $("body").css({"overflow": "hidden"});
-							    $("body").removeAttr("onmousewheel","return false;");
-                            	$(".foldBtn a").text("Δ收起相簿");
-                            }
 						});
 						
 						$(window).resize(
@@ -222,10 +364,10 @@
 						
 				        $(".cbp-fwslider").css({"visibility": "visible", "max-height": $(window).height()});
 				        
-				        if($(".cbp-fwslider").css("visibility") == "visible")
-                            $(".foldBtn a").text("Δ收起相簿");
-                        else if($(".cbp-fwslider").css("visibility") == "hidden")
-                            $(".foldBtn a").text("∇展開相簿");
+				        if(ifGalleryShow())
+                            $(".foldBtn a").text("Δ收起gallery");
+                        else
+                            $(".foldBtn a").text("∇展開gallery");
 						/*$("#foldBtn").hover(
 						    function() {
 						        if($(".cbp-fwslider").css("visibility") == "visible")
@@ -305,7 +447,41 @@
             slideLine('chaoverscroll_box','div',3000,25,20);
         </script>
 	</body>
-	
+	<script type='text/javascript'>
+	$(function(){
+　		$(window).load(function(){
+　　		$(window).bind('scroll resize', function(){
+　　			var $this = $(this);
+　　			var $this_Top=$this.scrollTop();
+　　			var navheight = 0;
+　　			
+　　			if(ifGalleryShow())
+				{
+					navheight = $(window).height();
+				}
+                else
+                {
+                	navheight = 71;
+                }
+				
+				
+　　			//當高度小於100時，關閉區塊 
+　　			if($this_Top < navheight){
+　　　				/*$('.nav nav').stop().animate({top:"-30px"},
+　　　					function(){*/
+　　　　					if($('.nav nav').css("position") == "fixed" )
+　　							$('.nav nav').css({position:"relative" , top:"0px"})
+　　　					/*});*/
+　　　			}
+　　　　		if($this_Top > navheight){
+　　　　			if($('.nav nav').css("position") != "fixed" )
+　　					$('.nav nav').css({position:"fixed" , top:"-40px" , "margin-left":"-465px" , left:"50%"})
+　　				$('.nav nav').stop().animate({top:"0px"});
+　　　 			}
+　　		}).scroll();
+　		});
+	});
+</script>
 		    
 	<div class="footer">
 		<footer></footer>

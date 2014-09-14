@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-.nav span.dropBottom,span.dropRight {
+.nav2 span.dropBottom,span.dropRight {
 	display: block;
 	box-shadow:inset 2px 0px 0px #FF0088;
 	position: absolute;
@@ -9,32 +9,32 @@
 	height: 100%;
 	top: 0px;
 }
-.nav nav span.dropBottom {
+.nav2 nav span.dropBottom {
 	box-shadow:inset 0px 2px 0px #FF0088;
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
 }
-.nav {
-    width:930px;
-    height:40px;
+.nav2 {
+    width:100%;
 	background-color:black;
-	position:relative;
-	left:50%;
-	margin-left:-465px;
+	position:fixed;
+	top:-65px;
+	left: 0px;
+	right: 0px;
 }
-.nav nav {
+.nav2 nav {
 	display:table;
 	margin:auto;
     /*box-shadow:0px 2px 0px #023333;*/
 }
-.nav ul {
+.nav2 ul {
 	margin:0;
 	padding:0;
 	list-style:none;
 }
 
-.nav ul ul {
+.nav2 ul ul {
 	opacity:0;
 	position:absolute;
 	top:150%;
@@ -42,33 +42,33 @@
 	transition:all .4s ease;
 	-webkit-transition:all .4s ease;
 }
-.nav ul ul ul {
+.nav2 ul ul ul {
 	top:0%;
 	left:120%;
 }
-.nav ul ul li:hover > ul {
+.nav2 ul ul li:hover > ul {
 	top:0%;
 	left:100%;
 	opacity:1;
 	visibility:visible;
 }
-.nav ul li:hover > ul {
+.nav2 ul li:hover > ul {
 	opacity:1;
 	top:100%;
 	visibility:visible;
 }
-.nav ul li {
+.nav2 ul li {
 	float:left;
 	position:relative;
 }
-.nav ul ul li {
+.nav2 ul ul li {
 	float:none;
 }
-.nav ul li {
+.nav2 ul li {
 	background-color:black;
 	cursor: pointer;
 }
-.nav ul a {
+.nav2 ul a {
 	text-decoration:none;
 	display:block;
 	color:#FFDD55;
@@ -77,15 +77,14 @@
 	text-align:center;
     text-shadow: 0px -1px 0px rgba(0,0,0,.2);
 }
-.nav ul li:hover {
+.nav2 ul li:hover {
 	background-color:#007373;
 }
-.nav ul li a:hover {
+.nav2 ul li a:hover {
 	background-color:#007373;
 }
 .home-icon {
-    width: 40px;
-    height:40px;
+    width: 3em;
 }
 .home-icon img {
 	text-decoration:none;
@@ -93,8 +92,4 @@
 	color:#FF9;
 	width:1.2em;
 	text-align:center;
-}
-
-.foldBtn:hover a:after{
-    content: "";
 }
