@@ -202,9 +202,26 @@
 	});
       }
     </script>
+
+    <script>
+      function showGallery(){
+        $(".cbp-fwslider").css({"visibility": "visible"});
+	$(".cbp-fwslider").animate({"height": $(window).height()-71},1000);
+        $(".foldBtn a").text("Δ收起gallery");
+      }
+
+      function hideGallery(){
+        $(".cbp-fwslider").animate({"height": "0px"},1000, function() {
+	  $(".cbp-fwslider").css({"visibility": "hidden"});
+          $(".foldBtn a").text("∇展開gallery");
+        });
+      }
+
+    </script>
 			
     <script>
       $(document).ready(function () {
+        $(".cbp-fwslider").css("height", $(window).height());
 	firstShowProgressBar();
 	
 	$(".main").load("home.html #content",function() {
@@ -223,29 +240,21 @@
 						
 	$(".foldBtn").click(function() {
 	  if(ifGalleryShow()) {
-	    $(".cbp-fwslider").animate({"height": "0px"},1000, function() {
-	      $(".cbp-fwslider").css({"visibility": "hidden"});
-              $(".foldBtn a").text("∇展開gallery");
-	    });
+	    hideGallery();
 	  } else {
-            $(".cbp-fwslider").css({"visibility": "visible"});
-	    $(".cbp-fwslider").animate({"height": $(window).height()-71},1000);
-            $(".foldBtn a").text("Δ收起gallery");
+            showGallery();
           }
 	});
 						
-	$(".enter").click(function()
-	{
-	    $(".cbp-fwslider").animate({"height": "0px"},1000, function() {
-	      $(".cbp-fwslider").css({"visibility": "hidden"});
-	      $("body").css({"overflow": "auto"});
-	      $("body").attr("onmousewheel","return true;");
-              $(".foldBtn a").text("∇展開gallery");
-	    });
+	$(".enter").click(function() {
+	  hideGallery();  
+	  $("body").css({"overflow": "auto"});
+	  $("body").attr("onmousewheel","return true;");
 	});
-						
+
 	$(window).resize( function() { 
-	  $(".cbp-fwslider").css("max-height", $(window).height()-71); 
+	  if(ifGalleryShow())
+	    $(".cbp-fwslider").css("height", $(window).height()-71); 
 	});
 						
 	$(".cbp-fwslider").css({"visibility": "visible", "max-height": $(window).height()});
