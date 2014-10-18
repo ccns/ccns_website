@@ -1,0 +1,4 @@
+uthName      "We are ccnser"
+Authtype     Basic
+AuthUserFile /home/backup/apache.passwd
+require user ccnsweb

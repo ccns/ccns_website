@@ -17,7 +17,7 @@
 }
 .nav {
     width:930px;
-    height:40px;
+    height:42px;
 	background-color:black;
 	position:relative;
 	left:50%;
@@ -60,6 +60,7 @@
 .nav ul li {
 	float:left;
 	position:relative;
+	height:42px;
 }
 .nav ul ul li {
 	float:none;
@@ -84,8 +85,8 @@
 	background-color:#007373;
 }
 .home-icon {
-    width: 40px;
-    height:40px;
+    width: 42px;
+    height:42px;
 }
 .home-icon img {
 	text-decoration:none;
